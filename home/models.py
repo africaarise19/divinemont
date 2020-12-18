@@ -57,3 +57,29 @@ class Testimony(models.Model):
 
     def __str__(self):
         return self.name
+
+class Gallery(models.Model): 
+    description = models.CharField(max_length=100)
+    image_gallery = models.ImageField(upload_to='gallery/')
+
+
+    class Meta:
+        verbose_name = 'gallery'
+        verbose_name_plural = 'galleries'
+
+    def __str__(self):
+        return self.description
+
+class Application(models.Model): 
+    description = models.CharField(max_length=100)
+    application_form = models.FileField(upload_to='Application', blank=True)
+
+
+    class Meta:
+        verbose_name = 'Application form'
+        verbose_name_plural = 'Application forms'
+
+    def __str__(self):
+        return self.description
+
+    

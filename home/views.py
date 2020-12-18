@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from blog.models import Post
-from .models import AboutUs , Services , Team , Testimony
+from .models import AboutUs , Services , Team , Testimony, Gallery, Application
 
 # Create your views here.
 
@@ -10,6 +10,8 @@ def home(request):
     services = Services.objects.all()
     team = Team.objects.all()
     testimony = Testimony.objects.all()
+    gallery = Gallery.objects.all()
+    application = Application.objects.all()
     posts = Post.objects.all().order_by('-created')
     latest_post = Post.objects.last()
 
@@ -18,6 +20,8 @@ def home(request):
         'services' : services ,
         'team' : team ,
         'testimony' : testimony ,
+        'gallery' : gallery ,
+        'application' : application ,
         'posts' : posts ,
         'latest_post' : latest_post ,
     }

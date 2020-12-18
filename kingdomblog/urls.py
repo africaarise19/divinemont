@@ -14,7 +14,7 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-admin.site.site_header = "Africa Arise AdminPanel"
-admin.site.site_title = "Africa Arise App Admin"
-admin.site.site_index_title = "Welcome To Africa Arise Admin Panel"
+admin.site.site_header = "Divine Montessori AdminPanel"
+admin.site.site_title = "Divine Montessori App Admin"
+admin.site.site_index_title = "Welcome To Divine Montessori Admin Panel"
 

@@ -1,440 +1,165 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-     <title>Kingdom Eagles Int'l Church</title>
-     <!-- 
-
-Known Template 
-
-https://templatemo.com/tm-516-known
-
--->
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="author" content="">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-     <link rel="stylesheet" href="{% static 'home_static/css/bootstrap.min.css'  %}">
-     <link rel="stylesheet" href="{% static 'home_static/css/font-awesome.min.css' %}">
-     <link rel="stylesheet" href="{% static 'home_static/css/owl.carousel.css' %}">
-     <link rel="stylesheet" href="{% static 'home_static/css/owl.theme.default.min.css' %}">
-
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="{% static 'home_static/css/templatemo-style.css' %}">
-
-</head>
-
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
-
-     <!-- PRE LOADER -->
-     <section class="preloader">
-          <div class="spinner">
-
-               <span class="spinner-rotate"></span>
-
-          </div>
-     </section>
 
 
-     <!-- MENU -->
-     <section class="navbar custom-navbar navbar-fixed-top" role="navigation">
-          <div class="container">
+{% block content %}
 
-               <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                         <span class="icon icon-bar"></span>
-                    </button>
+	<!-- Counter section  -->
+	<section class="counter-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-7 col-md-6">
+					<div class="big-icon">
+						<i class="fa fa-graduation-cap"></i>
+					</div>
+					<div class="counter-content">
+						<h2>Download The Application Form Here !</h2>
+						<p>and email to:  divinemont@gmail.com or upload as an attachement through our chat bot</p>
+						{% for item in application %}						
+                      <a href="{{item.application_form.url}}" download>
+                      <button type="button" class="btn btn-danger btn-lg mr-4 btn-block"><span>Download Form</span></button>
+                      </a>
+						
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col-lg-5 col-md-6">
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Counter section end -->
 
-                    <!-- lOGO TEXT HERE -->
-                    <a href="/" class="navbar-brand">Kingdom Eagles Int'l Church</a>
-               </div>
-
-               <!-- MENU LINKS -->
-               <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-nav-first">
-                         <li><a href="#about" class="smoothScroll">About</a></li>
-                         <li><a href=".team" class="smoothScroll">Pastors</a></li>
-                         <li><a href="#courses" class="smoothScroll">Latest Posts</a></li>
-                         <li><a href="{% url 'blog:post_list' %}">Blog</a></li>
-                         <li><a href="#testimonial" class="smoothScroll">Testimonies</a></li>
-                         <li><a href="#contact" class="smoothScroll">Contact</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right">
-                         <li><a href="tel:+2781 510 7365"><i class="fa fa-phone"></i> +2781 510 7365</a></li>
-                         <li><a href="https://wa.me/?text=I'm%20inquiring%20about%20kingdom%20eagles%20int'l%20church/<+2760695414/>" class="fa fa-whatsapp"></a></li>
-                    </ul>
-               </div>
-
-          </div>
-     </section>
-
-
-     <!-- HOME -->
-     <section id="home">
-          <div class="row">
-
-               <div class="owl-carousel owl-theme home-slider">
-                    <div class="item item-first">
-                         <div class="caption">
-                              <div class="container">
-                                   <div class="col-md-6 col-sm-12">
-                                        <h1>THE TEAM BEHIND OUR MINISTRY SUCCESS</h1>
-                                        <h3>No story can be told without heroes, and such is the same with our Ministry</h3>
-                                        <a href="{% url 'blog:post_list' %}"
-                                             class="section-btn btn btn-default smoothScroll">Visit Our Blog - Latest
-                                             Posts</a>
-                                        <a href="#feature" class="section-btn btn btn-default smoothScroll">Explore The
-                                             Site</a>
-                                        <a href="https://wa.me/?text=I'm%20inquiring%20about%20kingdom%20eagles%20int'l%20church/<+2760695414/>" class="section-btn btn btn-default smoothScroll">WhatsApp
-                                                  Us</a>                           
-                                        <a href="https://www.facebook.com/giddy.ngigi" class="section-btn btn btn-default smoothScroll">Facebook Page</a>
-                                     
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="item item-second">
-                         <div class="caption">
-                              <div class="container">
-                                   <div class="col-md-6 col-sm-12">
-                                        <h1>TO RAISE QUALITY LEADERS WHO WILL AFFECT THE WORLD WITH THE WORD OF TRUTH,
-                                              DIGNITY IN THE MINISTRY AND EXCELLENCE IN LIFE.</h1>
-                                         
-                                        <a href="https://twitter.com/giddykemi" class="section-btn btn btn-default smoothScroll">Twitter
-                                             Account</a>
-                                        <a href="https://wa.me/?text=I'm%20inquiring%20about%20kingdom%20eagles%20int'l%20church/<+2760695414/>" class="section-btn btn btn-default smoothScroll">WhatsApp
-                                             Us</a>  
-                                        <a href="https://www.youtube.com/channel/UCdmcy0vlhTQHVHsedJRvYEQ" class="section-btn btn btn-default smoothScroll">Our Youtube
-                                             Channel</a>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="item item-third">
-                         <div class="caption">
-                              <div class="container">
-                                   <div class="col-md-6 col-sm-12">
-                                        <h1>KEIC FLAMES - Worship with us</h1>
-                                        <h3>But the hour is coming, and is now here, when the true worshipers 
-                                             will worship the Father in spirit and truth, for the Father is seeking such people to worship him. 
-                                        </h3>
-                                        <a href="https://wa.me/?text=I'm%20inquiring%20about%20kingdom%20eagles%20int'l%20church/<+2760695414/>" class="section-btn btn btn-default smoothScroll">Let's
-                                             chat</a>
-                                        <a href="tel:+2781 510 7365" class="section-btn btn btn-default smoothScroll">Call Us</a>
-                                        <a href="https://www.youtube.com/channel/UCdmcy0vlhTQHVHsedJRvYEQ" class="section-btn btn btn-default smoothScroll">Youtube Channel</a>
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
-
-
-     <!-- FEATURE -->
-     <section id="feature">
-          <div class="container">
-               <div class="row">
-
-                    {% for info in about  %}
-                    <div class="col-md-4 col-sm-4">
-                         <div class="feature-thumb">
-                              <img src="{{item.image.url}}" class="img-responsive" alt="">
-                              <span>{{info.number}}</span>
-                              <h3>{{info.title}}</h3>
-                              <p>{{info.content|safe|truncatewords:100}}</p>
-                         </div>
-                    </div>
-                    {% endfor %}
-               </div>
-          </div>
-     </section>
-
-
-     <!-- ABOUT -->
-     <section id="about">
-          <div class="container">
-               <div class="row">
-                    {% for item in services %}
-                         <div class="col-md-6 col-sm-12">
-                              <div class="about-info">
-                                   <h2>{{item.heading}}</h2>
-     
-                                   <figure>
-                                        <span><i class="fa fa-users"></i></span>
-                                        <figcaption>
-                                             <h3>{{item.title}}</h3>
-                                             <p>{{item.content|safe}}</p>
-                                        </figcaption>
-                                   </figure>
-                              </div>
-                         </div>
-
-                         <div class="col-md-offset-1 col-md-4 col-sm-12">
-                              <div class="entry-form">
-                                   <img src="{{item.image.url}}" class="img-responsive"
-                                        alt="">
-                              </div>
-                         </div>
-                    {% endfor %}
-
-               </div>
-          </div>
-     </section>
-
-
-<section id="feature">
-     <div class="container">
-          <div class="row">
+	<!-- Services section -->
+	<section class="service-section spad">
+		<div class="container services">
+			<div class="section-title text-center">
+				<h3>OUR SERVICES</h3>
+				<p>We provide these great services as best as we can</p>
+            </div>
            
-               <h2 class="team">Our Amazing <br> <small>Ministers and Pastors</small></h2>
-                  
-               {% for info in team  %}
-               <div class="col-md-4 col-sm-4">
-                    <div class="feature-thumb">
-                         <img src="{{info.image.url}}" class="img-responsive" alt="">
-                         <h2>{{info.name}}</h2>
-                         <h4> {{info.title}}</h4>
-                         <p>{{info.bio|safe|truncatewords:40}} </p>
-                    </div>
-               </div>
-               {% endfor %}
-          </div>
-     </div>
-</section>
+			<div class="row">
+                {% for item in services %}
+				<div class="col-lg-4 col-sm-6 service-item">
+					<div class="service-icon">
+						<img src="{{item.image.url}}" alt="1">
+					</div>
+					<div class="service-content">
+                        <h4>{{item.heading}}</h4>
+                        {{item.title}}
+						<p>{{item.content|safe}}</p>
+					</div>
+                </div>
+                {% endfor %}               
+            </div>      
+		</div>
+	</section>
+	<!-- Services section end -->
+
+	
+	<!-- Enroll section -->
+	<section class="enroll-section spad set-bg" data-setbg="{% static 'new/img/enroll-bg.jpg' %}">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-5">
+					<div class="section-title text-white">
+						<h3>ABOUT US</h3>
+						<p>Get started with us to explore the exciting education</p>
+					</div>
+					<div class="enroll-list text-white">
+                        {% for info in about  %}
+						<div class="enroll-list-item">
+							<span>{{info.number}}</span>
+							<h5>{{info.title}}</h5>
+							<p>{{info.content|safe|truncatewords:200}}</p>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+				<div class="col-lg-6 offset-lg-1 p-lg-0 p-4">
+					<img src="{% static 'new/img/encroll-img.jpg' %}" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Enroll section end -->
 
 
-<!-- TEAM --
-<section id="team">
-     <div class="container">
-          <div class="row">
-               <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                         <h2>Our Amazing Team <small>Meet Professional Trainers</small></h2>
-                    </div>
-               </div>
-               <div class="col-md-3 col-sm-6">
-                    <div class="team-thumb">
-                         {% for info in team  %}
-                         <div class="team-image">
-                              <img src="{{info.image.url}}" class="img-responsive" alt="">
-                         </div>
-                         <div class="team-info">
-                              <h1>{{info.name}}</h1>
-                              <h3> <span>{{info.title}}</span></h3>
-                              <p>{{info.bio|truncatewords:40}} </p>
-                         </div>
-                         {% endfor %}
-                    </div>
-               </div>
-          </div>
-     </div>
-</section>
-hhhhhhhhhhhhhhhhhhhhhhhhhhhh
-     <!-- Courses -->
-     <section id="courses">
-          <div class="row">
-               <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                         <h2>Latest Blog Posts<small>We do frequent posts our blog</small></h2>
-                    </div>
-                    <div class="owl-carousel owl-theme owl-courses">
-                         <div class="col-md-4 col-sm-4">
-                              <div class="item">
+	<!-- Courses section -->
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Meet Our Amazing Staff</h3>
+				<p>Building a better world, A team with childrean at heart</p>
+			</div>
+			<div class="row">
+                <!-- course item -->
+                {% for info in team  %}
+				<div class="col-lg-4 col-md-6 course-item">
+					<div class="course-thumb">
+						<img src="{{info.image.url}}" alt="">
+						<div class="course-cat">
+							<span>{{info.name}}</span>
+						</div>
+					</div>
+					<div class="course-info">
+						<div class="date"><i class="fa fa-clock-o"></i> {{info.title}}</div>
+						<p>{{info.bio|safe|truncatewords:40}}</p>
+						
+					</div>
+				</div>
+				{% endfor %}		
+			</div>
+		</div>
+	</section>
 
-                                   <div class="courses-thumb">
-                                        {% for post in posts %}
-                                        <div class="courses-top">
-                                             <div class="courses-image">
-                                                  <a href="{% url 'blog:post_detail' post.id %}"><img
-                                                            src=" {{post.image.url}} " class="img-responsive"
-                                                            alt=""></a>
-                                             </div>
-                                        </div>
-
-                                        <div class="courses-detail">
-                                             <h2><a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a></h2>
-                                             <h3> Posted By:{{post.author}}</h3>
-                                             <h4> <span><i class="fa fa-calendar"></i> {{post.created}}</span></h3>
-                                                  <p>{{post.content|safe|truncatewords:15}}</p>
-                                                  <p><a href="{% url 'blog:post_detail' post.id %}"
-                                                            class="btn btn-primary btn-outline-primary btn-sm">Read
-                                                            More</a></p>
-                                        </div>
-                                        {% endfor %}
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-               </div>
-          </div>
-     </section>
-
-<!-- TESTIMONIAL -->
-<section id="testimonial">
-     <div class="container">
-          <div class="row">
-
-               <div class="col-md-12 col-sm-12">
-                    <div class="section-title">
-                         <h2>Testimonies <small>from around the world</small></h2>
-                    </div>
-
-                    <div class="owl-carousel owl-theme owl-client">
-                         <div class="col-md-4 col-sm-4">
-                              <div class="item">
-
-                                   {% for info in testimony %}
-
-                                        <div class="tst-image">
-                                             <img src="{{info.image.url}}" class="img-responsive" alt="">
-                                        </div>
-                                        <div class="tst-author">
-                                             <h4>{{info.name}}</h4>
-                                             <span>{{info.title}}</span>
-                                        </div>
-                                        <p>{{info.bio|safe|truncatewords:40}}</p>
-                                        <div class="tst-rating">
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                             <i class="fa fa-star"></i>
-                                        </div>
-                                   {% endfor %}
-                              </div>
-                                   
-                         </div>
-
-                    </div>
-
-               </div>
-          </div>
-</section>
+	<!-- Event section -->
+	<section class="event-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>Testimonials</h3>
+				<p>This is what some of our clients has to say ...</p>
+			</div>
+			<div class="row">
+                {% for info in testimony %}
+				<div class="col-md-6 event-item">
+					<div class="event-thumb">
+						<img src="{{info.image.url}}" alt="">
+						<div class="event-date">
+							<span>{{info.name}}</span>
+						</div>
+					</div>
+					<div class="event-info">
+						<h4>{{info.title}}</h4>
+						<p> {{info.bio|safe|truncatewords:40}}</p>
+						
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Event section end -->
 
 
-     <!-- CONTACT -->
-     <section id="contact">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-6 col-sm-12">
-                         <form id="contact-form" role="form" action="" method="post">
-                              <div class="section-title">
-                                   <h2>We love conversations <small>let us chat on this POP-UP Box!</small></h2>
-                              </div>
-
-                              <div class="col-md-12 col-sm-12">
-                                   <input type="text" class="form-control" placeholder="Enter full name" name="name"
-                                        required="">
-
-                                   <input type="email" class="form-control" placeholder="Enter email address"
-                                        name="email" required="">
-
-                                   <textarea class="form-control" rows="6" placeholder="Tell us about your message"
-                                        name="message" required=""></textarea>
-                              </div>
-
-                              <div class="col-md-4 col-sm-12">
-                                   <input type="submit" class="form-control" name="send message" value="Send Message">
-                              </div>
-
-                         </form>
-                    </div>
-
-                    <div class="col-md-6 col-sm-12">
-                         <div class="contact-image">
-                              <img src="" class="img-responsive"
-                                   alt="">
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </section>
-
-
-     <!-- FOOTER -->
-     <footer id="footer">
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Headquarter</h2>
-                              </div>
-                              <address>
-                                   <p>13702 Freedom Drive ivory park. <br> Midrand 1685, South Africa</p>
-                              </address>
-
-                              <ul class="social-icon">
-                                   <li><a href="https://www.facebook.com/giddy.ngigi" class="fa fa-facebook-square" attr="facebook icon"></a></li>
-                                   <li><a href="https://twitter.com/giddykemi" class="fa fa-twitter"></a></li>
-                                   <li><a href="https://www.youtube.com/channel/UCdmcy0vlhTQHVHsedJRvYEQ" class="fa fa-youtube"></a></li>
-                              </ul>
-
-                              <div class="copyright-text">
-                                   <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> Kingdom Eagles Int'l Church; All rights reserved</p>
-
-                                  <p></p> | This Website is made with (Love)<i class="icon-heart" aria-hidden="true"></i> by <a href="https://africaarisecoding.com" target="_blank" >Africa Arise Coding - Visit Us</a> </p>
-                              </div>
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6">
-                         <div class="footer-info">
-                              <div class="section-title">
-                                   <h2>Contact Info</h2>
-                              </div>
-                              <address>
-                                   <p>+2781 510 7365 |+2776 069 5414</p>
-                                   <p><a href="mailto:info@kingdomeaglesintl.com">info@kingdomeaglesintl.com</a></p>
-                              </address>
-
-                         </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12">
-                         <div class="footer-info newsletter-form">
-                              
-                              <div>
-                                   <div class="form-group">
-                                        <a href="{% url 'blog:post_list' %}"
-                                             class="section-btn btn btn-default smoothScroll">Visit Our Blog - Latest
-                                             Posts</a>
-                                        <a href="https://wa.me/?text=I'm%20inquiring%20about%20kingdom%20eagles%20int'l%20church/<+2760695414/>" class="section-btn btn btn-default smoothScroll">WhatsApp
-                                                  Us</a>                           
-                                        <a href="https://www.facebook.com/giddy.ngigi" class="section-btn btn btn-default smoothScroll">Facebook Page</a>
-                                     
-                                        
-                                   </div>
-                              </div>
-                         </div>
-                    </div>
-
-               </div>
-          </div>
-     </footer>
-
-
-     <!-- SCRIPTS -->
-     <script src="{% static 'home_static/js/jquery.js' %}"></script>
-     <script src="{% static 'home_static/js/bootstrap.min.js' %}"></script>
-     <script src="{% static 'home_static/js/owl.carousel.min.js' %}"></script>
-     <script src="{% static 'home_static/js/smoothscroll.js' %}"></script>
-     <script src="{% static 'home_static/js/custom.js' %}"></script>
-
-</body>
-
-</html>
+<div class="section-title text-center">
+    <h3>Find Our Gallery</h3>
+    <p>This Gallery contains our schools activities</p>
+</div>
+	<!-- Gallery section -->
+	<div class="gallery-section">
+		<div class="gallery">
+            <div class="grid-sizer"></div>
+            {% for item in gallery %}
+			    <div class="gallery-item gi-big set-bg" data-setbg="{{item.image_gallery.url}}">
+                <a class="img-popup" href="{{item.image_gallery.url}}"><i class="ti-plus"></i></a>
+                <br>
+                <h3>{{item.description}}</h3>
+            </div>			
+            {% endfor %}
+		</div>
+	</div>
+	<!-- Gallery section -->
+              
+{% endblock content %}
